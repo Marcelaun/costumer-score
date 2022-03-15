@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1450px;
+  font-family: 'Quicksand', sans-serif;
+  padding: 2rem;
+  box-shadow: 0 0 1em #e2e2e2;
+}
+
+.header h2 {
+  font-size: 3rem;
+}
