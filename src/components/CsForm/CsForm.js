@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import './CsForm.css';
 import MuitoSatisfeito from '../../assets/Muito satisfeito.svg';
@@ -7,16 +7,45 @@ import Neutro from '../../assets/Neutro.svg';
 import PoucoInsatisfeito from '../../assets/Pouco insatisfeito.svg';
 import MuitoInsatisfeito from '../../assets/Muito insatisfeito.svg';
 
+import { db } from '../../services/firebase';
+import { collection, addDoc } from 'firebase/firestore';
+
 
 const CsForm = () => {
+
 
   const [valueNPS, setValueNPS] = useState();
   const [valueCES, setValueCES] = useState();
   const [valueCSAT, setValueCSAT] = useState();
+  const [npsClientStatus, setNpsClientStatus] = useState();
+
+  const costumerDataCollectionRef = collection(db, "costumer_score_data");
+
+  const createCostumerData = async () => {
+
+    await addDoc(costumerDataCollectionRef, { nps: valueNPS, nps_client_status: npsClientStatus, ces: valueCES, csat: valueCSAT });
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     window.alert(`VALORES INSERIDOS: NPS(1° questão): ${valueNPS}, CES(2° questão): ${valueCES}, CSAT(3° questão):${valueCSAT}`);
+    createCostumerData();
   }
+
+  useEffect(() => {
+    if(valueNPS >= 0 && valueNPS <= 6) {
+      setNpsClientStatus('cliente_detrator');
+      console.log('cliente detrator')
+    } else if(valueNPS >= 7 && valueNPS <= 8) {
+      setNpsClientStatus('cliente_neutro');
+      console.log('cliente neutro')
+    }
+    else if(valueNPS >= 9 && valueNPS <= 10){
+      setNpsClientStatus('cliente_promotor');
+      console.log('cliente promotor')
+    }
+  },[valueNPS])
+  
   
 
   return (
