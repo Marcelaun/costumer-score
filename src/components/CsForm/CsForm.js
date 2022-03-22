@@ -57,61 +57,61 @@ const CsForm = () => {
         <div className="row-fluid-nps">
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="1" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="1" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>1</span>
             </label>
           </div>
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="2" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="2" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>2</span>
             </label>
           </div>
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="3" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="3" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>3</span>
             </label>
           </div>
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="4" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="4" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>4</span>
             </label>
           </div>
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="5" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="5" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>5</span>
             </label>
           </div>
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="6" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="6" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>6</span>
             </label>
           </div>
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="7" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="7" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>7</span>
             </label>
           </div>
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="8" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="8" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>8</span>
             </label>
           </div>
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="9" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="9" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>9</span>
             </label>
           </div>
           <div className="radio-nps">
             <label>
-              <input type="radio" name="option-nps" value="10" onChange={(e) => { setValueNPS(e.target.value) }}/>
+              <input type="radio" name="option-nps" value="10" onChange={(e) => { setValueNPS(Number(e.target.value)) }}/>
               <span>10</span>
             </label>
           </div>
@@ -123,44 +123,44 @@ const CsForm = () => {
         <div className="row-fluid-ces">
           <div className="radio">
             <label id="option-1">
-              <input type="radio" name="option-ces" value="1" onChange={(e) => {setValueCES(e.target.value)}}/>
+              <input type="radio" name="option-ces" value="1" onChange={(e) => {setValueCES(Number(e.target.value))}}/>
               <span>1</span>
             </label>
           </div>
           
           <div className="radio">
             <label id="option-2">
-              <input type="radio" name="option-ces" value="2" onChange={(e) => {setValueCES(e.target.value)}}/>
+              <input type="radio" name="option-ces" value="2" onChange={(e) => {setValueCES(Number(e.target.value))}}/>
               <span>2</span>
             </label>
           </div>
           <div className="radio">
             <label id="option-3">
-              <input type="radio" name="option-ces" value="3" onChange={(e) => {setValueCES(e.target.value)}}/>
+              <input type="radio" name="option-ces" value="3" onChange={(e) => {setValueCES(Number(e.target.value))}}/>
               <span>3</span>
             </label>
           </div>
           <div className="radio">
             <label id="option-4">
-              <input type="radio" name="option-ces" value="4" onChange={(e) => {setValueCES(e.target.value)}}/>
+              <input type="radio" name="option-ces" value="4" onChange={(e) => {setValueCES(Number(e.target.value))}}/>
               <span>4</span>
             </label>
           </div>
           <div className="radio">
             <label id="option-5">
-              <input type="radio" name="option-ces" value="5" onChange={(e) => {setValueCES(e.target.value)}}/>
+              <input type="radio" name="option-ces" value="5" onChange={(e) => {setValueCES(Number(e.target.value))}}/>
               <span>5</span>
             </label>
           </div>
           <div className="radio">
             <label id="option-6">
-              <input type="radio" name="option-ces" value="6" onChange={(e) => {setValueCES(e.target.value)}}/>
+              <input type="radio" name="option-ces" value="6" onChange={(e) => {setValueCES(Number(e.target.value))}}/>
               <span>6</span>
             </label>
           </div>
           <div className="radio">
             <label id="option-7">
-              <input type="radio" name="option-ces" value="7" onChange={(e) => {setValueCES(e.target.value)}}/>
+              <input type="radio" name="option-ces" value="7" onChange={(e) => {setValueCES(Number(e.target.value))}}/>
               <span>7</span>
             </label>
           </div>
@@ -172,35 +172,35 @@ const CsForm = () => {
         <div className="row-fluid-csat">
           <div className="radio-csat">
             <label>
-              <input type="radio" name="option-csat" value="5" onChange={(e) => {setValueCSAT(e.target.value)}}/>
+              <input type="radio" name="option-csat" value="5" onChange={(e) => {setValueCSAT(Number(e.target.value))}}/>
               <img src={MuitoSatisfeito} alt="Muito satisfeito"/>
               <span> Muito satisfeito</span>
             </label>
           </div>
           <div className="radio-csat">
             <label>
-              <input type="radio" name="option-csat" value="4" onChange={(e) => {setValueCSAT(e.target.value)}}/>
+              <input type="radio" name="option-csat" value="4" onChange={(e) => {setValueCSAT(Number(e.target.value))}}/>
               <img src={PoucoSatisfeito} alt="Pouco satisfeito"/>
               <span> Pouco satisfeito</span>
             </label>
           </div>
           <div className="radio-csat">
             <label>
-              <input type="radio" name="option-csat" value="3" onChange={(e) => {setValueCSAT(e.target.value)}}/>
+              <input type="radio" name="option-csat" value="3" onChange={(e) => {setValueCSAT(Number(e.target.value))}}/>
               <img src={Neutro} alt="Neutro"/>
               <span> Neutro</span>
             </label>
           </div>
           <div className="radio-csat">
             <label>
-              <input type="radio" name="option-csat" value="2" onChange={(e) => {setValueCSAT(e.target.value)}}/>
+              <input type="radio" name="option-csat" value="2" onChange={(e) => {setValueCSAT(Number(e.target.value))}}/>
               <img src={PoucoInsatisfeito} alt="Pouco insatisfeito"/>
               <span> Pouco insatisfeito</span>
             </label>
           </div>
           <div className="radio-csat">
             <label>
-              <input type="radio" name="option-csat" value="1" onChange={(e) => {setValueCSAT(e.target.value)}}/>
+              <input type="radio" name="option-csat" value="1" onChange={(e) => {setValueCSAT(Number(e.target.value))}}/>
               <img src={MuitoInsatisfeito} alt="Muito Insatisfeito"/>
               <span>Muito insatisfeito</span>
              </label>

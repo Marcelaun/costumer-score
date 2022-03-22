@@ -1,13 +1,22 @@
 import './App.css';
-import CsForm from './components/CsForm/CsForm';
-import Header from './components/Header/Header';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './pages/Home/Home';
+import AdminLogin from './pages/Admin/AdminLogin';
+import { AuthContextProvider } from './Contexts/AuthContext';
 
 function App() {
   return (
-    <>
-    <Header />
-    <CsForm />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<AdminLogin />} />
+      </Routes>
+    </Router>
   );
 }
 
