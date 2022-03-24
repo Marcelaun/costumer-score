@@ -5,18 +5,17 @@ export const AuthContext = createContext();
 
 export function AuthContextProvider(props) {
   const [user, setUser] = useState('');
-  const [ loginError, setLoginError ] = useState('');
   
+  const auth = getAuth();
   useEffect(() => {
-    const auth = getAuth();
+   
     const unsubscribe = onAuthStateChanged(auth ,(user) => {
-      console.log('user em useeffect authstateachanged', user);
 
       if(user) {
-        setLoginError('noError');
         
 
       const { displayName, uid, email} = user;
+      console.log(displayName, uid, email)
       
         setUser ({
           id: uid,
@@ -35,7 +34,7 @@ export function AuthContextProvider(props) {
     return () => {
       unsubscribe();
     }
-  },[]);
+  },[auth.currentUser, auth]);
 
 
 
@@ -43,29 +42,12 @@ async function logInWithEmailAndPassword(userData) {
   const auth = getAuth();
   
 
-await signInWithEmailAndPassword(auth, userData.email, userData.password)
+return await signInWithEmailAndPassword(auth, userData.email, userData.password)
 .then((userCredential) => {
 
   const user = userCredential.user;
+  console.log(user)
   setUser(user);
-
-})
-.catch((error) => {
-
-
-
-
-  if(error) {
-    console.log('erro login', error)
-    setLoginError(error.code);
-  } 
-  
-
-  
-
-  
-
-  
 
 })
 
@@ -106,7 +88,7 @@ async function logOutAccount() {
 
 
     return (
-        <AuthContext.Provider value={{ user, logInWithEmailAndPassword, loginError, logOutAccount }}>
+        <AuthContext.Provider value={{ user, logInWithEmailAndPassword, logOutAccount }}>
             {props.children}
         </AuthContext.Provider>
     );

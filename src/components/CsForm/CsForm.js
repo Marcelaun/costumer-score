@@ -10,8 +10,13 @@ import MuitoInsatisfeito from '../../assets/Muito insatisfeito.svg';
 import { db } from '../../services/firebase';
 import { collection, addDoc } from 'firebase/firestore';
 
+import { useAuth } from '../../hooks/useAuth';
+
 
 const CsForm = () => {
+
+  const { user } = useAuth();
+  console.log(user)
 
 
   const [valueNPS, setValueNPS] = useState();
