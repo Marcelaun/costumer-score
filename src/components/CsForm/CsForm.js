@@ -7,16 +7,14 @@ import Neutro from '../../assets/Neutro.svg';
 import PoucoInsatisfeito from '../../assets/Pouco insatisfeito.svg';
 import MuitoInsatisfeito from '../../assets/Muito insatisfeito.svg';
 
-import { db } from '../../services/firebase';
+import { db, Rdb } from '../../services/firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import { set, ref, push } from "firebase/database";
 
-import { useAuth } from '../../hooks/useAuth';
 
 
 const CsForm = () => {
 
-  const { user } = useAuth();
-  console.log(user)
 
 
   const [valueNPS, setValueNPS] = useState();
@@ -26,7 +24,29 @@ const CsForm = () => {
 
   const costumerDataCollectionRef = collection(db, "costumer_score_data");
 
+  const costumerScoreRefNPS = ref(Rdb, 'costumer-score/NPS');
+  const costumerScoreRefCES = ref(Rdb, 'costumer-score/CES');
+  const costumerScoreRefCSAT = ref(Rdb, 'costumer-score/CSAT');
+
+
   const createCostumerData = async () => {
+
+   
+    const newNPSRef = push(costumerScoreRefNPS);
+    const newCESRef = push(costumerScoreRefCES);
+    const newCSATRef = push(costumerScoreRefCSAT);
+    set(newNPSRef, {
+      valueNPS
+    })
+
+    set(newCESRef, {
+      valueCES
+    })
+
+    set(newCSATRef, {
+      valueCSAT
+    })
+    
 
     await addDoc(costumerDataCollectionRef, { nps: valueNPS, nps_client_status: npsClientStatus, ces: valueCES, csat: valueCSAT });
   }

@@ -46,7 +46,6 @@ return await signInWithEmailAndPassword(auth, userData.email, userData.password)
 .then((userCredential) => {
 
   const user = userCredential.user;
-  console.log(user)
   setUser(user);
 
 })

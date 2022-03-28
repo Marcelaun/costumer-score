@@ -25,6 +25,14 @@ const Login = () => {
       alert.show('Muitas tentativas! aguarde um instante...', {
         type: 'error'
       })
+     } else if(errorS === 'auth/user-not-found') {
+      alert.show('Este email não está autorizado ou não está cadastrado!', {
+        type: 'error',
+        containerStyle: {
+          backgroundColor: '#fff',
+         
+        }
+      })
      }
   }
 
