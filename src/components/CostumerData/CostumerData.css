@@ -1,0 +1,98 @@
+
+.costumer-data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.charts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  
+}
+
+.cd-title h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.8rem;
+}
+
+.cd-title {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+
+.pie-chart {
+  width: 40rem;
+  border-radius: 8px;
+  box-shadow: 0 0 0.5rem #dbdbdb;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.pie-chart h3, .bar-chart h3, .doug-chart h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.nps-info {
+  margin-top: 3rem;
+}
+
+.tabela-nps {
+  border: 1px solid #dadada;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.porcentagens-nps {
+  line-height: 2.4rem;
+}
+
+.bar-chart {
+  width: 45rem;
+  border-radius: 8px;
+  box-shadow: 0 0 0.5rem #dbdbdb;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.bar-chart h3 {
+  margin-top: 1rem;
+}
+
+.doug-chart {
+  width: 35rem;
+  border-radius: 8px;
+  box-shadow: 0 0 0.5rem #dbdbdb;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.doug-chart h3 {
+  margin-top: 1.8rem;
+}
+
+@media screen and (max-width: 900px) {
+  
+  .costumer-data-container {
+    flex-direction: column;
+  }
+
+  .charts {
+    flex-direction: column;
+  }
+  
+  .pie-chart {
+    width: 35rem;
+  }
+
+  .bar-chart {
+    width: 36rem;
+  }
+}

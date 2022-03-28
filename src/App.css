@@ -4,10 +4,12 @@
 	border: 0;
   box-sizing: border-box;
 	font-size: 62.5%;
+
 }
 
 body, .cs-form {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  
 }
