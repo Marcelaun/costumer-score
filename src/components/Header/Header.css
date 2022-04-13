@@ -1,7 +1,10 @@
 .header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+
   width: 100%;
   max-width: 1450px;
   font-family: 'Permanent Marker', cursive;
@@ -11,5 +14,22 @@
 
 .header h2 {
   font-size: 3rem;
+}
+
+.log-in-btn {
+  padding: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: #5e0fb8;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.log-in-btn:hover {
+  opacity: 0.8;
+
 }
 
