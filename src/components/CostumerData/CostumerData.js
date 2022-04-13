@@ -3,7 +3,7 @@ import './CostumerData.css';
 import { Rdb } from '../../services/firebase';
 import { ref, onValue} from "firebase/database";
 import { Pie, Doughnut, Bar } from 'react-chartjs-2';
-import IsLoading from '../isLoading/IsLoading';
+import IsLoading from '../IsLoading/IsLoading';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend,  CategoryScale, LinearScale, BarElement, Title, } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement,);
 
