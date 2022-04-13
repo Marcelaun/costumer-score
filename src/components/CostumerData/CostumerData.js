@@ -3,7 +3,7 @@ import './CostumerData.css';
 import { Rdb } from '../../services/firebase';
 import { ref, onValue} from "firebase/database";
 import { Pie, Doughnut, Bar } from 'react-chartjs-2';
-import isLoading from '../isLoading/isLoading';
+import IsLoading from '../isLoading/IsLoading';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend,  CategoryScale, LinearScale, BarElement, Title, } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement,);
 
@@ -11,6 +11,9 @@ ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarEle
 const CostumerData = () => {
 
   const [isLoading, setIsLoading] = useState(true);
+  const [generalCESData, setGeneralCESData] = useState();
+  const [generalNPSData, setGeneralNPSData] = useState();
+  const [generalCSATData, setGeneralCSATData] = useState();
 
   let cesValues = [];
   let npsValues = [];
@@ -18,6 +21,13 @@ const CostumerData = () => {
 
 
   const csCountRef = ref(Rdb, 'costumer-score/');
+  let oneCountCES = 0
+  let twoCountCES = 0
+  let threeCountCES = 0
+  let fourCountCES = 0
+  let fiveCountCES = 0
+  let sixCountCES = 0
+  let sevenCountCES = 0
   
   useEffect(() => {
     onValue(csCountRef, (snapshot) => {
@@ -26,28 +36,41 @@ const CostumerData = () => {
       Object.keys(data.CES).forEach(key => {
         console.log(`key: ${key}, value: ${data.CES[key].valueCES}`)
         cesValues.push(data.CES[key].valueCES);
+        console.log('rodou 1')
       })
       Object.keys(data.NPS).forEach(key => {
         console.log(`key: ${key}, value: ${data.NPS[key].valueNPS}`)
         npsValues.push(data.NPS[key].valueNPS);
+        console.log('rodou 2')
       })
   
       Object.keys(data.CSAT).forEach(key => {
         console.log(`key: ${key}, value: ${data.CSAT[key].valueCSAT}`)
         csatValues.push(data.CSAT[key].valueCSAT);
+        console.log('rodou 3')
       })
   
       setIsLoading(false);
+
+      
+
   
   
     });
+
+      oneCountCSAT = CSATValue.filter(value => value === 1);
+      twoCountCSAT = CSATValue.filter(value => value === 2);
+      threeCountCSAT = CSATValue.filter(value => value === 3);
+      fourCountCSAT = CSATValue.filter(value => value === 4);
+      fiveCountCSAT = CSATValue.filter(value => value === 5);
+
+    console.log( cesValues,
+      npsValues,
+     csatValues)
   
   },[csCountRef])
 
-  console.log(cesValues);
-  console.log(npsValues);
-  console.log(csatValues);
-
+  
   
 
   const NPSValue = [8, 4, 7, 8, 9, 8, 10, 8, 9, 10, 8, 9, 10 , 8 , 9, 10, 10 ,9, 7, 8, 9];
@@ -60,13 +83,7 @@ const CostumerData = () => {
   let neutr = 0;
 
   //CES variables
-  let oneCountCES = CESValue.filter(value => value === 1);
-  let twoCountCES = CESValue.filter(value => value === 2);
-  let threeCountCES = CESValue.filter(value => value === 3);
-  let fourCountCES = CESValue.filter(value => value === 4);
-  let fiveCountCES = CESValue.filter(value => value === 5);
-  let sixCountCES = CESValue.filter(value => value === 6);
-  let sevenCountCES = CESValue.filter(value => value === 7);
+ 
 
   // Sum values CES - CSAT
   let somaCES = 0;
@@ -207,7 +224,7 @@ const mediaCSAT = somaCSAT / CSATValue.length;
   };
 
   if(isLoading === true) {
-    return <isLoading />
+    return <IsLoading />
   }
   
   return (
